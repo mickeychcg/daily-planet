@@ -1,0 +1,9 @@
+<% include ../partials/header.ejs %>
+
+<form method="POST" action="/articles/<%= articleId %>?_method=PUT">
+  <input type='text' name='name' value='<%= articles.title %>'> <br>
+  <input type='text' name='name' value='<%= articles.body %>'><br>
+  <input type='submit' value='update'>
+</form>
+
+<% include ../partials/footer.ejs%>
