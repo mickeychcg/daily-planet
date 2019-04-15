@@ -30,6 +30,7 @@ app.post('/articles', function (req, res) {
   var articles = fs.readFileSync('./articles.json');
   articles = JSON.parse(articles);
   articles.push(req.body);
+  console.log("this is the articles", articles);
   fs.writeFileSync('./articles.json', JSON.stringify(articles));
   res.redirect('/articles')
 });

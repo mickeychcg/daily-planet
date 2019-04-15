@@ -1,9 +1,13 @@
 <% include ../partials/header.ejs %>
+  <div class="container">
+    <form method="POST" action="/articles/<%= articleId %>?_method=PUT">
+      <input type='text' name='name' size="60" value='<%= articles.title %>'> <br>
+      <textarea method="GET" name="type" cols="100" rows="10" placeholder='<%- articles.body %>'></textarea><br>
+      <!-- <input type="text" name="body" value="<%= articles.body %>" /><br /> -->
+      <input type='submit' value='Update'>
+    </form>
 
-<form method="POST" action="/articles/<%= articleId %>?_method=PUT">
-  <input type='text' name='name' value='<%= articles.title %>'> <br>
-  <input type='text' name='name' value='<%= articles.body %>'><br>
-  <input type='submit' value='update'>
-</form>
+  </div>
+
 
 <% include ../partials/footer.ejs%>

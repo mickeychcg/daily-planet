@@ -1,21 +1,21 @@
 <% include ../partials/header.ejs %>
   
+<!-- <div class="container"> -->
+  <div class='articleBox'>
 <% myArticles.forEach(function (article, id){ %>
-  <div class="main">
-    <div class='articleBox'>
-      <h3><%= article.title %></h3>
-      <p><%= article.body %></p>
-      <a href='/articles/<%= id %>/edit'>Edit</a>
-      <form method='POST' action='/articles/<%= id %>?_method=DELETE'>
-        <input type='submit' value='delete'>
-        <aside class='sidebar'>Sidebar</aside>
-      </form>
-      <a href='/articles/new'>Add New Article</a>
-      <br>
-  </div>
-
-    </div>
-
+  <h3><%= article.title %></h3>
+  <p><%= article.body %></p>
+    <form action='/articles/<%= id %>'>
+      <input type="submit" value='Read'>
+    </form>
+    <form action='/articles/<%= id %>/edit'>
+      <input type='submit' value='Edit'>
+    </form>
+    <form method='POST' action='/articles/<%= id %>?_method=DELETE'>
+      <input type='submit' value='Delete'>  
+    </form>
 <% }); %>
+</div>
+<!-- </div> -->
 
 <% include ../partials/footer.ejs%>
